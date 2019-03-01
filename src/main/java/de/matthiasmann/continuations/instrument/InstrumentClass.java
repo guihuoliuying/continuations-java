@@ -58,7 +58,7 @@ public class InstrumentClass extends ClassVisitor {
     private ArrayList<MethodNode> methods;
     
     public InstrumentClass(ClassVisitor cv, MethodDatabase db, boolean forceInstrumentation) {
-        super(Opcodes.ASM4, cv);
+        super(Opcodes.ASM7, cv);
         
         this.db = db;
         this.forceInstrumentation = forceInstrumentation;

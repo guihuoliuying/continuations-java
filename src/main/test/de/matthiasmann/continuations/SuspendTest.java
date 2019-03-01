@@ -61,6 +61,11 @@ public class SuspendTest extends TestCase implements CoroutineProto {
 
     private static void print(String fmt, Object ... args) throws SuspendExecution {
         System.out.printf(fmt, args);
+//        Coroutine.yield();
+        yield1();
+    }
+
+    private static void yield1() throws SuspendExecution {
         Coroutine.yield();
     }
 }

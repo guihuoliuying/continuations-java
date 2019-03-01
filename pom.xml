@@ -23,6 +23,19 @@
                     <encoding>utf-8</encoding>
                 </configuration>
             </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifestEntries>
+                            <Premain-Class>de.matthiasmann.continuations.instrument.JavaAgent</Premain-Class>
+                            <Can-Redefine-Classes>true</Can-Redefine-Classes>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
@@ -65,9 +78,22 @@
         <!-- https://mvnrepository.com/artifact/org.ow2.asm/asm-all -->
         <dependency>
             <groupId>org.ow2.asm</groupId>
-            <artifactId>asm-all</artifactId>
-            <version>4.2</version>
+            <artifactId>asm</artifactId>
+            <version>7.0</version>
         </dependency>
+        <dependency>
+            <groupId>org.ow2.asm</groupId>
+            <artifactId>asm-util</artifactId>
+            <version>7.0</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.ow2.asm/asm-tree -->
+        <dependency>
+            <groupId>org.ow2.asm</groupId>
+            <artifactId>asm-tree</artifactId>
+            <version>7.0</version>
+        </dependency>
+
+
         <!-- https://mvnrepository.com/artifact/org.openanzo.dependencies/org.apache.tools.ant -->
         <!-- https://mvnrepository.com/artifact/org.apache.ant/ant -->
         <dependency>
